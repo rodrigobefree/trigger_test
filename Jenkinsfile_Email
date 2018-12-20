@@ -6,10 +6,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-            
-ansiColor('gnome-terminal') {
-  echo 'Building..'
-}
+              echo 'Building..'
+
             }
         }
         stage('Test') {

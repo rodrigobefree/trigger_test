@@ -27,8 +27,7 @@ pipeline {
             )
         }   
     }
-}    
-    post {
+        post {
         failure {
            emailext(
                 subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] Falhou!",
@@ -37,4 +36,4 @@ pipeline {
             )
         }   
     }
-}  
+} 

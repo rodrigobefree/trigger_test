@@ -3,11 +3,6 @@
 pipeline {
     agent any
 
-
-ansiColor('xterm') {
-    echo 'Ficou colorido?'
-}
-
     stages {
         stage('Build') {
             steps {

@@ -19,24 +19,15 @@ pipeline {
         }
     }
     
-    post {
-        success {
-            emailext(
-                subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com sucesso :D",
-                body: "Verifique a saída da console do Job ${env.JOB_NAME} em [${env.BUILD_URL}] ",
-                to: "rodrigobefree@gmail.com"
-            )
-                }   
-        
-        failure {
-            emailext(
-                subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com FALHA!",
-                body: "Verifique a saída da console do Job ${env.JOB_NAME} em [${env.BUILD_URL}] ",
-                to: "rodrigobefree@gmail.com"
-            )
-                }   
-        }       
-      
+
+
+
+post {
+    always {
+        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Testeeeeeeeee'
+    }
+}
+
         
         
         

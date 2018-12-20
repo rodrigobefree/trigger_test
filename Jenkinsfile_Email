@@ -29,7 +29,15 @@ pipeline {
                 }   
         }
         
-        
+       post {
+        failure {
+            emailext(
+                subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com FALHA!",
+                body: "Verifique a saída da console do Job ${env.JOB_NAME} em [${env.BUILD_URL}] ",
+                to: "rodrigobefree@gmail.com"
+            )
+                }   
+        }       
       
         
         

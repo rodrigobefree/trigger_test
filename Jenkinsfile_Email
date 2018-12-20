@@ -11,7 +11,10 @@ ansiColor('xterm') {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+            
+ansiColor('gnome-terminal') {
+  echo 'Building..'
+}
             }
         }
         stage('Test') {

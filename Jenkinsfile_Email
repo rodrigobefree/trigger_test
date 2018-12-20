@@ -27,9 +27,7 @@ pipeline {
                 to: "rodrigobefree@gmail.com"
             )
                 }   
-        }
         
-       post {
         failure {
             emailext(
                 subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com FALHA!",
